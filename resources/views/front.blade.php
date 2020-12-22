@@ -17,9 +17,10 @@
                     @foreach ($featuredSeries as $series)
                         <b-card title="{{ $series->title }}" img-src="https://picsum.photos/300/300/?image=41" img-alt="Image" img-top>
                             <b-card-text>
-                                {{ \Str::words($series->description, 10) }}
+                                @php $excerpt = \Str::words($series->description, 10) @endphp
+                                {!! $excerpt !!}
                             </b-card-text>
-                            <template #footer>
+                            <template v-slot:footer>
                                 <small class="text-muted">
                                     Last updated 3 mins ago
                                 </small>
