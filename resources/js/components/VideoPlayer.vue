@@ -11,7 +11,7 @@
 <script>
 import Player from '@vimeo/player'
 export default {
-    props: ['video'],
+    props: ['video', 'nextVideoUrl'],
     mounted() {
         let videoOptions = {
             id: this.video.vimeo_video_id,
@@ -19,6 +19,11 @@ export default {
         };
 
         let player = new Player('video-player', videoOptions);
+
+        player.on('ended', () => {
+            // alert('video ended', this.nextVideoUrl);
+            window.location.replace(this.nextVideoUrl);
+        });
     }
 }
 </script>

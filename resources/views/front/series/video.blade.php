@@ -9,8 +9,8 @@
                 <source src="#" type="video/mp4">
                 Your browser does not support the video tag
             </video> --}}
-
-            <video-player :video="{{ $video }}"></video-player>
+            <b-breadcrumb :items={{ json_encode($breadCrumbs) }}></b-breadcrumb>
+            <video-player :video="{{ $video }}" next-video-url="{{ $nextVideoUrl }}"></video-player>
         </section>
 
         <section class="mb-5 pt-5 text-center">
