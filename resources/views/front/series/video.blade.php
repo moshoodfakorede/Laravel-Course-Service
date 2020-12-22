@@ -3,16 +3,14 @@
 @section('content')
     <b-container>
         <section>
-            <h2>Video Player</h2>
-            {{-- <b-jumbotron>
-                <template v-slot:header>{{ $video->title }}</template>
-                <template v-slot:lead>{{ $video->description }}</template>
+            {{-- <h2>Video Player</h2> --}}
 
-                <hr class="my-4">
+            {{-- <video width="1000" height="400" controls preload>
+                <source src="#" type="video/mp4">
+                Your browser does not support the video tag
+            </video> --}}
 
-                <b-button variant="primary" href="#">Start Series</b-button>
-                <b-button variant="success" href="#">Subscribe</b-button>
-            </b-jumbotron> --}}
+            <video-player :video="{{ $video }}"></video-player>
         </section>
 
         <section class="mb-5 pt-5 text-center">
